@@ -16,9 +16,12 @@ def get_smallest_bar(bars_list):
 
 
 def get_closest_bar(bars_list, longitude, latitude):
-    return min(bars_list, key=lambda bar:
-               abs(float(bar['Latitude_WGS84']) - latitude) +
-               abs(float(bar['Longitude_WGS84']) - longitude))
+    return min(
+        bars_list,
+        key=lambda bar:
+        abs(float(bar['Latitude_WGS84']) - latitude) +
+        abs(float(bar['Longitude_WGS84']) - longitude)
+    )
 
 
 if __name__ == '__main__':
