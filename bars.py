@@ -29,12 +29,12 @@ def get_closest_bar(bars_list, longitude, latitude):
 
 
 def get_user_coordinates(coordinate):
-    try:
-        print('Введите значение ' + coordinate, end=' ')
-        return float(input())
-    except ValueError:
+    print('Введите значение ' + coordinate, end=' ')
+    coordinate = input()
+    while not coordinate.isnumeric():
         print('Широта и долгота должны быть числами!')
-        sys.exit()
+        coordinate = input()
+    return float(coordinate)
 
 
 if __name__ == '__main__':
